@@ -29,19 +29,17 @@ struct ContentView_Previews: PreviewProvider {
 
 struct CardView: View {
     var isFaceUp: Bool = false
-    
+    let base: RoundedRectangle = RoundedRectangle(cornerRadius: 12)
     var body: some View {
         ZStack {
             if isFaceUp {
-                RoundedRectangle(cornerRadius: 12)
-                    .foregroundColor(.white)
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(lineWidth: 2)
+                base.fill(.white)
+                base.stroke(lineWidth: 2)
                 Text("👻")
                     .font(.largeTitle)
             }
             else {
-                RoundedRectangle(cornerRadius: 12)
+                base.fill()
             }
         }
     }
